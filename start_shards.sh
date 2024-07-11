@@ -21,10 +21,11 @@ mongod --replSet "$REPLICA_SET$((3))" --shardsvr --port $((START_PORT + 8)) --bi
 mongod --replSet "$REPLICA_SET$((3))" --shardsvr --port $((START_PORT + 9)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((3))/$((9))" --oplogSize 200  &
 
 # Shard Server
-mongod --configsvr --replSet "$REPLICA_SET$((4))" --port $((START_PORT + 10)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((0))/a" --oplogSize 200  &
-mongod --configsvr --replSet "$REPLICA_SET$((4))" --port $((START_PORT + 11)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((0))/b" --oplogSize 200  &
-mongod --configsvr --replSet "$REPLICA_SET$((4))" --port $((START_PORT + 12)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((0))/c" --oplogSize 200  
+mongod --configsvr --replSet "$REPLICA_SET$((4))" --port $((START_PORT + 10)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((0))/a" --oplogSize 200   &
+mongod --configsvr --replSet "$REPLICA_SET$((4))" --port $((START_PORT + 11)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((0))/b" --oplogSize 200   &
+mongod --configsvr --replSet "$REPLICA_SET$((4))" --port $((START_PORT + 12)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((0))/c" --oplogSize 200   
 
+#  --tlsMode requireTLS --tlsCertificateKeyFile "./certs/fileName.pem" --tlsCAFile ./"certs/fileName.pem" 
 
 echo ""
 echo "Sharded Replica Set Shutdown"

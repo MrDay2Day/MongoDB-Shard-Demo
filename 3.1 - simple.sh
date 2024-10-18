@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPLICA_SET="day2day"
-START_PORT=29000
+START_PORT=29500
 HOSTS="localhost,127.0.0.1"
 DB_PATH="simple"
 

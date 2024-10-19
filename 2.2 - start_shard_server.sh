@@ -25,3 +25,7 @@ mongos --configdb day2day4/127.0.0.1:28010,127.0.0.1:28011,127.0.0.1:28012 --bin
 
 # // Verify sharding status
 # sh.status();
+
+# // Check Balancer status & Enabling if disabled
+# sh.getBalancerState()
+# sh.setBalancerState(true)

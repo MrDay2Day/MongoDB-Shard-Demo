@@ -5,6 +5,8 @@ START_PORT=29500
 HOSTS="localhost,127.0.0.1"
 DB_PATH="simple"
 
+mkdir simple && mkdir simple/1 && mkdir simple/2 && mkdir simple/3
+
 # Starting Replica Set 1
 mongod --replSet "$REPLICA_SET$((1))" --port $((START_PORT + 1)) --bind_ip $HOSTS --dbpath "./$DB_PATH/$((1))" --oplogSize 200  &
 mongod --replSet "$REPLICA_SET$((1))" --port $((START_PORT + 2)) --bind_ip $HOSTS --dbpath "./$DB_PATH/$((2))" --oplogSize 200  &

@@ -5,6 +5,11 @@ START_PORT=28000
 HOSTS="localhost,127.0.0.1"
 DB_PATH="shard_"
 
+mkdir shard_0 & mkdir shard_0/a & mkdir shard_0/b & mkdir shard_0/c
+mkdir shard_1 & mkdir shard_1/1 & mkdir shard_1/2 & mkdir shard_1/2
+mkdir shard_2 & mkdir shard_2/4 & mkdir shard_2/5 & mkdir shard_2/6
+mkdir shard_3 & mkdir shard_3/7 & mkdir shard_3/8 & mkdir shard_3/9
+
 # Starting Replica Set 1
 mongod --replSet "$REPLICA_SET$((1))" --shardsvr --port $((START_PORT + 1)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((1))/$((1))" --oplogSize 200  &
 mongod --replSet "$REPLICA_SET$((1))" --shardsvr --port $((START_PORT + 2)) --bind_ip $HOSTS --dbpath "./$DB_PATH$((1))/$((2))" --oplogSize 200  &

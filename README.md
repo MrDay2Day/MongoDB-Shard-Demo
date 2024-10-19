@@ -14,6 +14,7 @@ This is an example of how MongoDB can be scaled horizontally across multiple ser
 
 ### 1.0
 
+- Creating all directories for `replicaset` and `shard` server
 - Starts main shard server.
 - Starts the replica shard servers
 
